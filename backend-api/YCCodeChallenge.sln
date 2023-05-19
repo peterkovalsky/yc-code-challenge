@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yc-code-challenge", "YCCodeChallenge.API\yc-code-challenge.csproj", "{D1E64F6D-D26B-4ABF-A541-672A401FA9B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCCodeChallenge.Tests", "YCCodeChallenge.Tests\YCCodeChallenge.Tests.csproj", "{737FB77A-0D64-496B-AE2F-50B23EDBC5DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1E64F6D-D26B-4ABF-A541-672A401FA9B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1E64F6D-D26B-4ABF-A541-672A401FA9B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1E64F6D-D26B-4ABF-A541-672A401FA9B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1E64F6D-D26B-4ABF-A541-672A401FA9B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{737FB77A-0D64-496B-AE2F-50B23EDBC5DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{737FB77A-0D64-496B-AE2F-50B23EDBC5DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{737FB77A-0D64-496B-AE2F-50B23EDBC5DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{737FB77A-0D64-496B-AE2F-50B23EDBC5DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

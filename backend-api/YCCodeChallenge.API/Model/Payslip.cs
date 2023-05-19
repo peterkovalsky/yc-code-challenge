@@ -12,7 +12,7 @@ namespace YCCodeChallenge.Model
         public DateTime End { get; set; }
 
         [ExcelColumn("employee_code")]
-        public int EmployeeCode { get; set; }
+        public double EmployeeCode { get; set; }
 
         [ExcelColumn("code")]
         public string PayCode { get; set; }

@@ -51,7 +51,23 @@ namespace YCCodeChallenge.Excel
                             var excelColumnAttribute = property.GetCustomAttributes<ExcelColumnAttribute>()?.FirstOrDefault();
                             if (excelColumnAttribute != null)
                             {
-                                property.SetValue(instance, row[excelColumnAttribute.ColumnName]);
+                                var value = row[excelColumnAttribute.ColumnName];
+                                if (value == null) continue;
+
+                                if (property.PropertyType == typeof(DateTime) && value.GetType() == typeof(string))
+                                {
+                                    var dateTime = DateTime.Parse(value.ToString());
+                                    property.SetValue(instance, dateTime);
+                                }
+                                else if (property.PropertyType == typeof(decimal) && value.GetType() == typeof(double))
+                                {
+                                    var decimalValue = Convert.ToDecimal(value);
+                                    property.SetValue(instance, decimalValue);
+                                }
+                                else
+                                {
+                                    property.SetValue(instance, value);
+                                }
                             }
                         }
 

@@ -18,6 +18,6 @@ namespace YCCodeChallenge.Model
         public DateTime PayPeriodTo { get; set; }
 
         [ExcelColumn("employee_code")]
-        public int EmployeeCode { get; set; }
+        public double EmployeeCode { get; set; }
     }
 }
