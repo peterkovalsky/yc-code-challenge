@@ -22,7 +22,7 @@ namespace YCCodeChallenge.Services
             _disbursements = _dataRepository.GetDisbursements();
         }
 
-        public Dictionary<double, decimal> CalculateOTE(int quarter, int year, double? employeeCode)
+        public Dictionary<double, decimal> CalculateOTE(int quarter, int year)
         {
             (DateTime periodFrom, DateTime periodTo) = DateHelper.GetQuarterPeriod(quarter, year);
 
@@ -38,7 +38,7 @@ namespace YCCodeChallenge.Services
             return otePayments.ToDictionary(p => p.Key, p => (p.Value * _options.SuperPercentage) / 100);
         }
 
-        public Dictionary<double, decimal> CalculateDisbursements(int quarter, int year, double? employeeCode)
+        public Dictionary<double, decimal> CalculateDisbursements(int quarter, int year)
         {
             (DateTime periodFrom, DateTime periodTo) = DateHelper.GetQuarterPeriod(quarter, year);
 
@@ -50,7 +50,7 @@ namespace YCCodeChallenge.Services
                 .ToDictionary(g => g.Key, g => g
                     .Where(d => d.PaymentMade >= payFrom && d.PaymentMade <= payTo)
                     .Sum(d => d.SgcAmount));
-        }    
+        }
 
         public bool IsOTE(string code)
         {
