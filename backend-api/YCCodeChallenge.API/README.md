@@ -1,1 +1,0 @@
-1. Since we cannot query data in Excel file we will have to read the whole file once and then query in-memory data to reduce I/O reads.

@@ -5,7 +5,7 @@ import { NumericFormat } from "react-number-format";
 const QuarterlyReport = () => {
   const [reports, setReports] = useState(null);
   const [quarter, setQuarter] = useState(1);
-  const [year, setYear] = useState(2017);
+  const [year, setYear] = useState(2018);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -25,7 +25,9 @@ const QuarterlyReport = () => {
   const getReportsAPI = (quarter, year) => {
     setLoading(true);
     axios
-      .get(`https://localhost:7163/report/quarterly/${quarter}/${year}`)
+      .get(
+        `${process.env.REACT_APP_API_URL}/report/quarterly/${quarter}/${year}`
+      )
       .then((response) => {
         setReports(response.data.employeeReports);
         setLoading(false);

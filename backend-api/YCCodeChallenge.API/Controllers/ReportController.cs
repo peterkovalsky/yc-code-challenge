@@ -29,10 +29,9 @@ public class ReportController : ControllerBase
             EmployeeReports = disbursements.Select(d => new EmployeeQuarterlyReport
             {
                 EmployeeCode = d.Key,
-                TotalDisbursed = d.Value,
-                TotalOTE = otePayments.GetValueOrDefault(d.Key),
-                TotalSuperPayable = superPayments.GetValueOrDefault(d.Key),
-
+                TotalDisbursed = Math.Round(d.Value, 2),
+                TotalOTE = Math.Round(otePayments.GetValueOrDefault(d.Key), 2),
+                TotalSuperPayable = Math.Round(superPayments.GetValueOrDefault(d.Key), 2)
             }).ToList()
         };
     }
